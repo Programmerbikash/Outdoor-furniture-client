@@ -1,10 +1,25 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const Login = () => {
-    const { register, handleSubmit } = useForm();
-    const [data, setData] = useState("");
+    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { signIn, signinWithGoogle } = useContext(AuthContext);
+    const [loginError, setLoginError] = useState('');
+    const [loginUserEmail, setLoginUserEmail] = useState('');
+    const location = useLocation();
+    const navigate = useNavigate();
+    // const [token] = useToken(loginUserEmail);
+
+    const from = location.state?.from?.pathname || '/';
+
+    // if (token) {
+    //     navigate(from, { replace: true });
+    // }
+
+    // const { register, handleSubmit } = useForm();
+    // const [data, setData] = useState("");
     // const { register, handleSubmit, watch, formState: { errors } } = useForm();
     // const onSubmit = data => console.log(data);
 
@@ -22,9 +37,38 @@ const Login = () => {
     //   if (isError) {
     //     return <span>Error: {error.message}</span>
     //   }
+    const handleGoogleSubmit = () => {
+        signinWithGoogle()
+        .then((result) => {
+            // The signed-in user info.
+            const user = result.user;
+            console.log(user);
+          }).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            const email = error.customData.email;
+            console.log(errorCode, errorMessage, email);
+        });
+    }
 
     const handleLogin = data => {
         console.log(data);
+        setLoginError('');
+        signIn(data.email, data.password)
+            .then(result => {
+                // Signed in 
+                const user = result.user;
+                console.log(user);
+                setLoginUserEmail(data.email);
+            })
+            .catch(error => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage)
+                setLoginError(error.message);
+        });
     }
 
     return (
@@ -51,7 +95,7 @@ const Login = () => {
                     <div className="flex flex-col w-full border-opacity-50">
                         <div className="divider">OR</div>
                     </div>
-                    <button className="btn btn-outline btn-info w-4/5 my-2">Login With Google</button>
+                    <button onClick={handleGoogleSubmit} className="btn btn-outline btn-info w-4/5 my-2">Login With Google</button>
                 </div>
                 </form>
             </div>

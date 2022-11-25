@@ -8,21 +8,24 @@ const Navbar = () => {
 
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
-            .catch(err => console.log(err));
+        .then(() => {
+            // Sign-out successful.
+          }).catch((error) => {
+            // An error happened.
+            console.log(error);
+          });
     }
 
     const menuItems = <React.Fragment>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/appointment">Appointment</Link></li>
         <li><Link to="/about">About</Link></li> 
-        <li><Link to="/login">login</Link></li> 
-        {/* {user?.uid ?
+        {user?.uid ?
             <>
                 <li><Link to="/dashboard">Dashboard</Link></li>
                 <li><button onClick={handleLogOut}>Sign out</button></li>
             </>
-            : <li><Link to="/login">Login</Link></li>} */}
+            : <li><Link to="/login">Login</Link></li>}
     </React.Fragment>
 
     return (
