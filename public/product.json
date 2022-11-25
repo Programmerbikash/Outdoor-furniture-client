@@ -1,45 +1,20 @@
 [
     {
-        "name":"Bed",
-        "category_img": "https://i.ibb.co/qrDZqQM/image.png",
         "category_id":1,
-        [
-            {
-                "title": "Canopy bed",
-                "img": "https://i.ibb.co/BKGdTKt/image.png",
-                "location": ,
-                "resale_price": ,
-                "original_price": ,
-                "total_use": "6 month"
-                "sellar_name": ""
-            },
-            {
-                "title": "Four-poster bed",
-                "img": "https://i.ibb.co/m6gP2PF/image.png",
-                "location": ,
-                "resale_price": ,
-                "original_price": ,
-                "total_use": "6 month"
-                "sellar_name": ""
-            },
-            {
-                "title": "Murphy bed",
-                "img": "https://i.ibb.co/jzYxG1g/image.png",
-                "location": ,
-                "resale_price": ,
-                "original_price": ,
-                "total_use": "6 month"
-                "sellar_name": ""
-            },
-            {
-                "title": "Platform bed",
-                "img": "https://i.ibb.co/ZLJPSvt/image.png",
-                "location": ,
-                "resale_price": ,
-                "original_price": ,
-                "total_use": "6 month"
-                "sellar_name": ""
-            },
-        ]
+        "title":"Bed",
+        "category_img": "https://i.ibb.co/qrDZqQM/image.png",
+        "description": "A bed is a piece of furniture that people sleep on. It normally has a soft mattress on a bed frame. Many beds also have bed sheets to cover the mattress and additional sheets for the people to sleep under. People also use a pillow under their heads. A bed comes in many different sizes including a single, double and king size."
+    },
+    {
+        "category_id":2,
+        "title":"Desk",
+        "category_img": "https://i.ibb.co/SRh1q3d/image.png",
+        "description": "A desk is a piece of furniture where someone can sit and write, often with drawers or other places to put books, papers, and other things. Unlike a table, there is only one side of the desk where somebody could sit. Desks come in many different sizes. There is a Armoire desk, which is very big. There is also a portable desk which is very small. Desks can be used at home. They can also be used in an office. Desks may also be used in schools."
+    },
+    {
+        "category_id":3,
+        "title":"Table",
+        "category_img": "https://i.ibb.co/3vFQWxs/image.png",
+        "description": "A table is a piece of furniture with a flat top supported by one or more legs. We put things on a table, often for a short time, for example food and knives and forks, etc. at a meal, cups for drinks, a book, a map, writing paper when writing, and things for hobbies. We also put things on tables for a longer time, for example a TV, computer or decorations (pretty things). Often we put a cloth on the table, flat on the top."
     }
 ]
