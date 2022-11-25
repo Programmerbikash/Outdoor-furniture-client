@@ -1,0 +1,45 @@
+[
+    {
+        "name":"Bed",
+        "category_img": "https://i.ibb.co/qrDZqQM/image.png",
+        "category_id":1,
+        [
+            {
+                "title": "Canopy bed",
+                "img": "https://i.ibb.co/BKGdTKt/image.png",
+                "location": ,
+                "resale_price": ,
+                "original_price": ,
+                "total_use": "6 month"
+                "sellar_name": ""
+            },
+            {
+                "title": "Four-poster bed",
+                "img": "https://i.ibb.co/m6gP2PF/image.png",
+                "location": ,
+                "resale_price": ,
+                "original_price": ,
+                "total_use": "6 month"
+                "sellar_name": ""
+            },
+            {
+                "title": "Murphy bed",
+                "img": "https://i.ibb.co/jzYxG1g/image.png",
+                "location": ,
+                "resale_price": ,
+                "original_price": ,
+                "total_use": "6 month"
+                "sellar_name": ""
+            },
+            {
+                "title": "Platform bed",
+                "img": "https://i.ibb.co/ZLJPSvt/image.png",
+                "location": ,
+                "resale_price": ,
+                "original_price": ,
+                "total_use": "6 month"
+                "sellar_name": ""
+            },
+        ]
+    }
+]
