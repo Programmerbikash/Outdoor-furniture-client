@@ -1,38 +1,22 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import CategoryProduct from './CategoryProduct';
+import { FaPlusSquare } from 'react-icons/fa';
 
 const ProductCategory = () => {
     const productCategory = useLoaderData();
     console.log(productCategory);
 
     return (
-        <div>
-            <h2 className="text-2xl">Total Length: {productCategory.length}</h2>
-            <div className="grid gap-10 grid-cols-1 md:grid-cols-2">
-                {/* {
+        <div className='my-10'>
+            <h2 className="text-2xl text-center font-bold text-success my-4"><FaPlusSquare className='inline'/> Total Furniture: {productCategory.length}</h2>
+            <div className="grid gap-12 md:ml-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                {
                     productCategory.length > 0 ? 
-                    productCategory.map(product => )
-                } */}
-            <div className="card lg:card-side bg-base-100 shadow-xl">
-            <figure><img src="https://placeimg.com/400/400/arch" alt="Album"/></figure>
-            <div className="card-body">
-                <h2 className="card-title">New album is released!</h2>
-                <p>Click the button to listen on Spotiwhy app.</p>
-                <div className="card-actions justify-end">
-                <button className="btn btn-primary">Listen</button>
-                </div>
-            </div>
-            </div>
-            <div className="card lg:card-side bg-base-100 shadow-xl">
-            <figure><img src="https://placeimg.com/400/400/arch" alt="Album"/></figure>
-            <div className="card-body">
-                <h2 className="card-title">New album is released!</h2>
-                <p>Click the button to listen on Spotiwhy app.</p>
-                <div className="card-actions justify-end">
-                <button className="btn btn-primary">Listen</button>
-                </div>
-            </div>
-            </div>
+                        productCategory.map(product => <CategoryProduct key={product._id} product={product}></CategoryProduct>)
+                        : 
+                        <h2 className="text-2xl">Haven't any product</h2>
+                }
             </div>
         </div>
     );

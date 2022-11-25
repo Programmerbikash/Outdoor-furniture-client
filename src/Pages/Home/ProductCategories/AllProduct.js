@@ -10,7 +10,7 @@ const AllProduct = ({ furnitureItem }) => {
                 <h2 className="card-title">{title}</h2>
                 <p>{description}</p>
                 <div className="card-actions justify-center">
-                <Link to={`allProduct/${_id}`}><button className="btn btn-primary">Book Now</button></Link>
+                <Link to={`allProduct/${_id}`}><button className="btn btn-primary">Show All</button></Link>
                 </div>
             </div>
         </div>
