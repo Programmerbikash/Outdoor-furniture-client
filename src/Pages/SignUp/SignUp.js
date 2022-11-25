@@ -3,18 +3,20 @@ import { AuthContext } from '../../contexts/AuthProvider';
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { createUser, signinWithGoogle, updateUser } = useContext(AuthContext);
     const [signUpError, setSignUPError] = useState('');
     const [createdUserEmail, setCreatedUserEmail] = useState('')
-    // const [token] = useToken(createdUserEmail);
+    const [token] = useToken(createdUserEmail);
     const navigate = useNavigate();
 
-    // if(token){
-    //     navigate('/');
-    // }
+    if(token){
+        navigate('/');
+    }
+    
     const handleGoogleSubmit = () => {
         signinWithGoogle()
         .then((result) => {
@@ -71,9 +73,9 @@ const SignUp = () => {
     }
 
     return (
-        <div className='h-[800px] flex justify-center items-center'>
+        <div className='h-[700px] flex justify-center items-center'>
             <div className='w-96 p-5 shadow-2xl bg-slate-100'>
-                <h2 className="text-3xl">Sign Up Now</h2>
+                <h2 className="text-3xl text-center">Sign Up Now</h2>
                 <form onSubmit={handleSubmit((handleSignUp))}>
                 <div className="form-control w-full max-w-xs my-2">
                     <label className="label"><span className="label-text">Write your name:</span></label>
