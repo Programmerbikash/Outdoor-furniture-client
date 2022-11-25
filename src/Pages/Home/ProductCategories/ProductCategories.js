@@ -5,7 +5,7 @@ const ProductCategories = () => {
     const [furniture, setFurniture] = useState([]);
 
     useEffect(() => {
-        fetch('product.json')
+        fetch('http://localhost:5000/furniture')
             .then(res => res.json())
             .then(data => setFurniture(data));
     }, [])

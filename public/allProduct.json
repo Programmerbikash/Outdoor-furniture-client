@@ -1,0 +1,122 @@
+[
+    {
+        "service_id": "6380770d345d495b77c9e599",
+        "title": "Canopy bed",
+        "img": "https://i.ibb.co/BKGdTKt/image.png",
+        "location": "Chattogram",
+        "resale_price": 17000,
+        "original_price": 20000,
+        "total_use": "6 month",
+        "sellar_name": "Bill Gate"
+    },
+    {
+        "service_id": "6380770d345d495b77c9e599",
+        "title": "Four-poster bed",
+        "img": "https://i.ibb.co/m6gP2PF/image.png",
+        "location": "Chattogram",
+        "resale_price": 12000,
+        "original_price": 15000,
+        "total_use": "4 month",
+        "sellar_name": "Elon Musk"
+    },
+    {
+        "service_id": "6380770d345d495b77c9e599",
+        "title": "Murphy bed",
+        "img": "https://i.ibb.co/jzYxG1g/image.png",
+        "location": "Chattogram",
+        "resale_price": 32000,
+        "original_price": 35000,
+        "total_use": "1 year",
+        "sellar_name": "Bernard Arnault"
+    },
+    {
+        "service_id": "6380770d345d495b77c9e599",
+        "title": "Platform bed",
+        "img": "https://i.ibb.co/ZLJPSvt/image.png",
+        "location": "Chattogram",
+        "resale_price": 20000,
+        "original_price": 25000,
+        "total_use": "9 month",
+        "sellar_name": "Gautam Adani"
+    },
+    {
+        "service_id": "6380770d345d495b77c9e59a",
+        "title": "Davenport desk",
+        "img": "https://i.ibb.co/6yZryYz/image.png",
+        "location": "Chattogram",
+        "resale_price": 12000,
+        "original_price": 16000,
+        "total_use": "1 year",
+        "sellar_name": "Gautam Adani"
+    },
+    {
+        "service_id": "6380770d345d495b77c9e59a",
+        "title": "Computer desk",
+        "img": "https://i.ibb.co/4PT1Qw7/image.png",
+        "location": "Chattogram",
+        "resale_price": 10000,
+        "original_price": 14000,
+        "total_use": "7 month",
+        "sellar_name": "Jeff Bezos"
+    },
+    {
+        "service_id": "6380770d345d495b77c9e59a",
+        "title": "Writing desk",
+        "img": "https://i.ibb.co/y0qBK9C/image.png",
+        "location": "Chattogram",
+        "resale_price": 42000,
+        "original_price": 50000,
+        "total_use": "1 year",
+        "sellar_name": "Warren Buffett"
+    },
+    {
+        "service_id": "6380770d345d495b77c9e59a",
+        "title": "Secretary desk",
+        "img": "https://i.ibb.co/2tN5529/image.png",
+        "location": "Chattogram",
+        "resale_price": 5000,
+        "original_price": 7000,
+        "total_use": "2 year",
+        "sellar_name": "Larry Ellison"
+    },
+    {
+        "service_id": "6380770d345d495b77c9e59b",
+        "title": "Game Table",
+        "img": "https://i.ibb.co/2tN5529/image.png",
+        "location": "Chattogram",
+        "resale_price": 5000,
+        "original_price": 7000,
+        "total_use": "2 year",
+        "sellar_name": "Larry Page"
+    },
+    {
+        "service_id": "6380770d345d495b77c9e59b",
+        "title": "Coffee table",
+        "img": "https://i.ibb.co/9bZjTSD/image.png",
+        "location": "Chattogram",
+        "resale_price": 14000,
+        "original_price": 18000,
+        "total_use": "1 year",
+        "sellar_name": "Mukesh Ambani"
+    },
+    {
+        "service_id": "6380770d345d495b77c9e59b",
+        "title": "Dining table",
+        "img": "https://i.ibb.co/b5hwVsH/image.png",
+        "location": "Chattogram",
+        "resale_price": 22000,
+        "original_price": 27000,
+        "total_use": "6 month",
+        "sellar_name": "Elon Musk"
+    },
+    {
+        "service_id": "6380770d345d495b77c9e59b",
+        "title": "Gateleg table",
+        "img": "https://i.ibb.co/54Hd5xL/image.png",
+        "location": "Chattogram",
+        "resale_price": 9000,
+        "original_price": 11000,
+        "total_use": "1 year",
+        "sellar_name": "Jeff Bezos"
+    }
+]
