@@ -27,7 +27,7 @@ const ProductCategory = () => {
             {
                 service && 
                 <BookingModel
-                        // setService={setService}
+                        setService={setService}
                         service={service}
                     ></BookingModel>
             }

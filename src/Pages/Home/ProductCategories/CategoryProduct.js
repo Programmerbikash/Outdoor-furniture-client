@@ -48,10 +48,10 @@ const CategoryProduct = ({ product, setService }) => {
               {resale_price}
             </div>
           </div>
-          <div className="card-actions w-full mt-4">
+          <div className="card-actions mt-4 mx-auto">
             <div>
-              <label htmlFor="my-modal" onClick={() => setService({title, resale_price, location, sellar_name})} className="btn">
-              Book Now
+              <label htmlFor="my-modal" onClick={() => setService({title, img, resale_price, location, sellar_name})} className="btn btn-primary">
+              Booking Now
               </label>
             </div>
           </div>

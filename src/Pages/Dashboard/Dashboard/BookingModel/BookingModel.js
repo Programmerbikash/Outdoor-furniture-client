@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import toast from "react-hot-toast";
+import { AuthContext } from "../../../../contexts/AuthProvider";
 
-const BookingModel = ({ service }) => {
+const BookingModel = ({ service, setService }) => {
   //   console.log(service)
-  const { title, resale_price, location, sellar_name } = service;
+    const { img, title, resale_price, location, sellar_name } = service;
+    const { user } = useContext(AuthContext);
 
   const handleBuying = (e) => {
     e.preventDefault();
     const form = e.target;
+    const name = form.name.value;
     const sellingPrice = form.sellingPrice.value;
     const sellerName = form.sellerName.value;
     const location = form.location.value;
@@ -14,15 +18,37 @@ const BookingModel = ({ service }) => {
     const email = form.email.value;
     const phone = form.phone.value;
 
-    console.log(
-      sellingPrice,
-      sellerName,
-      sellerName,
-      location,
-      userName,
-      email,
-      phone
-    );
+      const buying = {
+          service_name: name,
+          service_img: img,
+          selling_price: sellingPrice,
+          seller_name: sellerName,
+          location,
+          user_name: userName,
+          email,
+          phone
+      };
+
+      fetch('http://localhost:5000/buying', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(buying)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged) {
+                    setService(null);
+                    toast.success('Buying confirmed');
+                }
+                else{
+                    toast.error(data.message);
+                }
+            })
+
+    //   console.log(buying);
   };
 
   return (
@@ -43,6 +69,16 @@ const BookingModel = ({ service }) => {
               className="grid grid-cols-1 gap-2"
               action=""
             >
+              <label className="label">
+                <span className="label-text">Service Name:</span>
+              </label>
+              <input
+                name="name"
+                type="text"
+                value={title}
+                disabled
+                className="input input-bordered w-full"
+              />
               <label className="label">
                 <span className="label-text">Furniture Price:</span>
               </label>
@@ -79,7 +115,9 @@ const BookingModel = ({ service }) => {
               <input
                 type="text"
                 name="userName"
-                placeholder="Enter your name"
+                defaultValue={user?.displayName}
+                readOnly
+                disabled
                 className="input input-bordered w-full"
               />
               <label className="label">
@@ -88,7 +126,9 @@ const BookingModel = ({ service }) => {
               <input
                 type="email"
                 name="email"
-                placeholder="Email Address"
+                defaultValue={user?.email}
+                disabled
+                readOnly
                 className="input input-bordered w-full"
               />
               <label className="label">
