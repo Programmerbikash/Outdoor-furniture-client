@@ -3,6 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
 import useAdmin from '../hooks/useAdmin';
 import Navbar from '../Pages/Navbar/Navbar';
+import Footer from '../Pages/Shared/Footer/Footer';
 
 const DashboardLayout = () => {
     const { user } = useContext(AuthContext);
@@ -12,21 +13,23 @@ const DashboardLayout = () => {
         <div>
             <Navbar></Navbar>
             <div className="drawer drawer-mobile">
-                <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
+                <input id="service-drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
                     <Outlet></Outlet>
                 </div>
                 <div className="drawer-side">
-                    <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 text-base-content">
-                        <li><Link to="/dashboard/myOrder">My orders</Link></li>
-                        <li><Link to="/dashboard">Add A product</Link></li>
-                        <li><Link to="/dashboard">Add A product</Link></li>
+                    <label htmlFor="service-drawer" className="drawer-overlay"></label>
+                    <ul className="menu p-4 w-1/2 md:w-80 text-base-content font-bold md:bg-none bg-base-200">
+                        <li><Link to="/dashboard">My orders</Link></li>
+
+                        <li><Link to="/dashboard/addProduct">Add A product</Link></li>
+                        <li><Link to="/dashboard/myProduct">My Products</Link></li>
+                        <li><Link to="/dashboard/myBuyers">My buyers</Link></li>
+                        <li><Link to="/dashboard/allusers">All Users</Link></li>
                         {
                             isAdmin && <>
-                                <li><Link to="/dashboard/allusers">All users</Link></li>
-                                <li><Link to="/dashboard/adddoctor">Add A Doctor</Link></li>
-                                <li><Link to="/dashboard/managedoctors">Manage Doctors</Link></li>
+                                <li><Link to="/dashboard/allusers">All Users</Link></li>
+                                <li><Link to="/dashboard/addProduct">All Sellers</Link></li>
                             </>
                         }
 
@@ -34,6 +37,7 @@ const DashboardLayout = () => {
 
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

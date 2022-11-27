@@ -8,8 +8,8 @@ import useToken from '../../hooks/useToken';
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { createUser, signinWithGoogle, updateUser } = useContext(AuthContext);
-    const [signUpError, setSignUPError] = useState('');
     const [createdUserEmail, setCreatedUserEmail] = useState('')
+    const [signUpError, setSignUPError] = useState('');
     const [token] = useToken(createdUserEmail);
     const navigate = useNavigate();
 
@@ -39,7 +39,7 @@ const SignUp = () => {
                 // Signed in 
                 const user = result.user;
                 console.log(user);
-                toast('User Created Successfully.')
+                toast.success('User Created Successfully.')
                 const userInfo = {
                     displayName: data.name
                 }
@@ -59,7 +59,7 @@ const SignUp = () => {
 
     const saveUser = (name, email) =>{
         const user ={name, email};
-        fetch('https://doctors-portal-server-rust.vercel.app/users', {
+        fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -67,10 +67,24 @@ const SignUp = () => {
             body: JSON.stringify(user)
         })
         .then(res => res.json())
-        .then(data =>{
+            .then(data => {
+            console.log(data);
+            // getUserToken(email)
             setCreatedUserEmail(email);
+            // navigate('/');
         })
     }
+
+    // const getUserToken = email => {
+    //     fetch(`http://localhost:5000/jwt?email=${email}`)
+    //             .then(res => res.json())
+    //             .then(data => {
+    //                 if (data.accessToken) {
+    //                     localStorage.setItem('accessToken', data.accessToken);
+    //                     navigate('/');
+    //                 }
+    //     });
+    // }
 
     return (
         <div className='h-[700px] flex justify-center items-center'>
@@ -79,15 +93,18 @@ const SignUp = () => {
                 <form onSubmit={handleSubmit((handleSignUp))}>
                 <div className="form-control w-full max-w-xs my-2">
                     <label className="label"><span className="label-text">Write your name:</span></label>
-                    <input type="text" {...register("name", {required: "Name is Required"})} className="input input-bordered w-full max-w-xs" placeholder="Enter your name" />
+                        <input type="text" {...register("name", { required: "Name is Required" })} className="input input-bordered w-full max-w-xs" placeholder="Enter your name" />
+                        {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
                 </div>
                 <div className="form-control w-full max-w-xs my-2">
                     <label className="label"><span className="label-text">Email:</span></label>
-                    <input type="email" {...register("email", {required: "Email is Required"})} className="input input-bordered w-full max-w-xs" placeholder="Enter your email" />
+                        <input type="email" {...register("email", { required: "Email is Required" })} className="input input-bordered w-full max-w-xs" placeholder="Enter your email" />
+                        {errors.name && <p className='text-red-500'>{errors.email.message}</p>}
                 </div>
                 <div className="form-control w-full max-w-xs my-2">
                     <label className="label"><span className="label-text">Password:</span></label>
-                    <input type="password" {...register("password", {required: "Password is Required"})} className="input input-bordered w-full max-w-xs" placeholder="Enter your password" />
+                        <input type="password" {...register("password", { required: "Password is Required" })} className="input input-bordered w-full max-w-xs" placeholder="Enter your password" />
+                        {errors.name && <p className='text-red-500'>{errors.password.message}</p>}
                 </div>
                 <select className="select select-bordered w-full max-w-xs my-2" {...register("category", { required: true })}>
                     <option selected>User</option>
@@ -96,6 +113,7 @@ const SignUp = () => {
                 {/* <p>{data}</p> */}
                 <div className='w-full text-center'>
                     <input className="btn btn-info my-2 w-4/5" type="submit" />
+                    {signUpError && <p className='text-red-600'>{signUpError}</p>}
                     <p className="font-semibold">Already have an account? <Link className='text-info' to='/login'>Please Login</Link></p>
                     <div className="flex flex-col w-full border-opacity-50">
                         <div className="divider">OR</div>

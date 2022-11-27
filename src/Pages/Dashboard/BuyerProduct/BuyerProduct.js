@@ -4,10 +4,15 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 
 const BuyerProduct = () => {
     const { user } = useContext(AuthContext);
+
     const { isLoading, error, data: buyingdata = [] } = useQuery({
         queryKey: ["buyingdata", user?.email],
         queryFn: () =>
-          fetch(`http://localhost:5000/buying?email=${user?.email}`).then(
+            fetch(`http://localhost:5000/buying?email=${user?.email}`, {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+          }).then(
             (res) => res.json()
           ),
       });
@@ -25,15 +30,12 @@ const BuyerProduct = () => {
     //   }, []);
     
       return (
-        <div>
-          <div className="overflow-x-auto w-full">
+        <div className='my-10'>
+          <div className="overflow-x-auto ml-10 w-5/6">
             <table className="table w-full">
               <thead>
                 <tr>
                   <th>
-                    <label>
-                      <input type="checkbox" className="checkbox" />
-                    </label>
                   </th>
                   <th>Image</th>
                   <th>Title</th>
@@ -46,14 +48,12 @@ const BuyerProduct = () => {
                 {
                     buyingdata.map((product, i) => <tr key={i}>
                     <th>
-                      <label>
-                        <input type="checkbox" className="checkbox" />
-                      </label>
+                      <label>{i+1}</label>
                     </th>
                     <td>
                       <div className="flex items-center space-x-3">
                         <div className="avatar">
-                          <div className="rounded w-24">
+                          <div className="rounded w-12 md:w-24">
                             <img
                               src={product.service_img}
                               alt="Avatar Tailwind CSS Component"

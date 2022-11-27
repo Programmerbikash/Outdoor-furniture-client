@@ -1,9 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
-import AvailableService from "../../Pages/Dashboard/AvailableService/AvailableService";
+import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
+import AllUsers from "../../Pages/Dashboard/AdminInfo/AllUsers/AllUsers";
 import BuyerProduct from "../../Pages/Dashboard/BuyerProduct/BuyerProduct";
-import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
+import MyBuyers from "../../Pages/Dashboard/SellerInfo/MyBuyers/MyBuyers";
+import MyProducts from "../../Pages/Dashboard/SellerInfo/MyProducts/MyProducts";
 import Home from "../../Pages/Home/Home/Home";
 import ProductCategory from "../../Pages/Home/ProductCategories/ProductCategory";
 import Login from "../../Pages/Login/Login";
@@ -36,19 +38,27 @@ export const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashboardLayout></DashboardLayout>,
+        element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children: [
             {
                 path: '/dashboard',
-                element: <Dashboard></Dashboard>
-            },
-            {
-                path: '/dashboard/myOrder',
                 element: <BuyerProduct></BuyerProduct>
             },
             {
-                path: '/dashboard/availableService/:id',
-                element: <AvailableService></AvailableService>
+                path: '/dashboard/addProduct',
+                element: <AddProduct></AddProduct>
+            },
+            {
+                path: '/dashboard/myProduct',
+                element: <MyProducts></MyProducts>
+            },
+            {
+                path: '/dashboard/myBuyers',
+                element: <MyBuyers></MyBuyers>
+            },
+            {
+                path: '/dashboard/allusers',
+                element: <AllUsers></AllUsers>
             },
         ]
     }
