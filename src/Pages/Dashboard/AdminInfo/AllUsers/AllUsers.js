@@ -12,25 +12,26 @@ const AllUsers = () => {
           )
       })
     
-    //   if (isLoading) return 'Loading...'
+      if (isLoading) return 'Loading...'
     
-    // if (error) return 'An error has occurred: ' + error.message
+        if (error) return 'An error has occurred: ' + error.message
 
-    // const handleMakeAdmin = (id) => {
-    //     fetch(`https://doctors-portal-server-rust.vercel.app/users/admin/${id}`, {
-    //       method: "PUT",
-    //       headers: {
-    //         authorization: `bearer ${localStorage.getItem("accessToken")}`,
-    //       },
-    //     })
-    //       .then((res) => res.json())
-    //       .then((data) => {
-    //         if (data.modifiedCount > 0) {
-    //           toast.success("Make admin successful.");
-    //           refetch();
-    //         }
-    //       });
-    //   };
+    const handleMakeAdmin = (id) => {
+        fetch(`http://localhost:5000/users/admin/${id}`, {
+          method: "PUT",
+          headers: {
+            authorization: `bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.modifiedCount > 0) {
+              toast.success("Add admin successfully!!");
+              refetch();
+            }
+          });
+      };
     
     return (
         <div>
@@ -55,10 +56,10 @@ const AllUsers = () => {
                 <td>
                   {user?.role !== "admin" && (
                     <button
-                    //   onClick={() => handleMakeAdmin(user._id)}
+                      onClick={() => handleMakeAdmin(user._id)}
                       className="btn btn-xs btn-primary"
                     >
-                      Make Admin
+                      Add Admin
                     </button>
                   )}
                 </td>
