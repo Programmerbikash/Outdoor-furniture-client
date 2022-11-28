@@ -87,10 +87,6 @@ const Login = () => {
                         <input type="password" {...register("password")} className="input input-bordered w-full max-w-xs" placeholder="Enter your password" />
                         {errors.email && <p className='text-red-600'>{errors.email?.password}</p>}
                 </div>
-                <select className="select select-bordered w-full max-w-xs my-2" {...register("category", { required: true })}>
-                    <option selected>User</option>
-                    <option>Seller</option>
-                </select>
                 {/* <p>{data}</p> */}
                 <div className='w-full text-center'>
                     <input className="btn btn-info my-2 w-4/5" type="submit" />

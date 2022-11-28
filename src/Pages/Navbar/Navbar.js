@@ -1,15 +1,20 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import logo from "../../assets/favicon.ico";
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, loading } = useContext(AuthContext);
 
     const handleLogOut = () => {
         logOut()
         .then(() => {
             // Sign-out successful.
+            if(loading){
+                return <progress className="progress w-56"></progress>
+            }
+            toast.success('Log Out Successfully!!')
           }).catch((error) => {
             // An error happened.
             console.log(error);

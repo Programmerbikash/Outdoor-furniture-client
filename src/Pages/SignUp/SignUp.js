@@ -45,7 +45,7 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(data.name, data.email);
+                        saveUser(data.name, data.email, data.category);
                     })
                     .catch(err => console.log(err));
             })
@@ -57,8 +57,8 @@ const SignUp = () => {
             });
     }
 
-    const saveUser = (name, email) =>{
-        const user ={name, email};
+    const saveUser = (name, email, category) =>{
+        const user ={name, email, category};
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
