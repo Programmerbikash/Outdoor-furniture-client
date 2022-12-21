@@ -44,7 +44,7 @@ const AddProduct = () => {
           };
 
           // save doctor information to the database
-          fetch("http://localhost:5000/seller/addProduct", {
+          fetch("https://outdoor-furniture-server-programmerbikash.vercel.app/seller/addProduct", {
             method: "POST",
             headers: {
               "content-type": "application/json",

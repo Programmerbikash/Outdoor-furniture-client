@@ -10,7 +10,7 @@ const AvailableService = ({ service }) => {
      // Queries
     const {isLoading, isError, data: categoryService = [], error} = useQuery({
         queryKey: ['allProduct'],
-        queryFn: () => fetch(`http://localhost:5000/singleProduct/6380beb2345d495b771dbc40`)
+        queryFn: () => fetch(`https://outdoor-furniture-server.vercel.app/singleProduct/6380beb2345d495b771dbc40`)
         .then(res => res.json())
     })
     console.log(categoryService);

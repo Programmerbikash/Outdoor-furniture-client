@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
         {
           path: "/allProduct/:id",
           element: <PrivateRoute><ProductCategory></ProductCategory></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/allProduct/${params.id}`)
+          loader: ({params}) => fetch(`https://outdoor-furniture-server.vercel.app/allProduct/${params.id}`)
         },
       ],
     },

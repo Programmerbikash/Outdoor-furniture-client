@@ -14,7 +14,7 @@ const MyProducts = () => {
         queryKey: ['sellers'],
         queryFn: async () => {
             try {
-                const res = await fetch('http://localhost:5000/seller/addProduct', {
+                const res = await fetch('https://outdoor-furniture-server.vercel.app/seller/addProduct', {
                     headers: {
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
                     }
@@ -30,7 +30,7 @@ const MyProducts = () => {
 
     
     const handleDeleteSellers = sellers => {
-        fetch(`http://localhost:5000/seller/addProduct/${sellers._id}`, {
+        fetch(`https://outdoor-furniture-server.vercel.app/seller/addProduct/${sellers._id}`, {
             method: 'DELETE', 
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

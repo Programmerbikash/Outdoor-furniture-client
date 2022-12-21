@@ -5,7 +5,7 @@ const ProductCategories = () => {
     const [furniture, setFurniture] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/furniture')
+        fetch('https://outdoor-furniture-server.vercel.app/furniture')
             .then(res => res.json())
             .then(data => setFurniture(data));
     }, [])
@@ -14,7 +14,7 @@ const ProductCategories = () => {
     return (
         <div>
             <div className='text-center mt-20'>
-                <h2 className="text-2xl">Furniture Category</h2>
+                <h2 className="text-4xl font-bold text-center my-6">Furniture Category</h2>
                 <p>Explore Our Fresh Modern Furniture At Low Prices. The Quality You Want At Prices You Love. Restyle Your Home For A Fresh Look! Explore Our Fresh New Furniture Styles At Low Prices. No Money Down Financing. Select Items Ship Free. Designer Looks For Less.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-10 md:mx-12">

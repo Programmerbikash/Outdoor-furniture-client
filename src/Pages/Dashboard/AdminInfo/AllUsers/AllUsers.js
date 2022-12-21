@@ -7,7 +7,7 @@ const AllUsers = () => {
     const { isLoading, error, refetch, data: users = [] } = useQuery({
         queryKey: ['repoData'],
         queryFn: () =>
-          fetch('http://localhost:5000/users').then(res =>
+          fetch('https://outdoor-furniture-server.vercel.app/users').then(res =>
             res.json()
           )
       })
@@ -17,7 +17,7 @@ const AllUsers = () => {
         if (error) return 'An error has occurred: ' + error.message
 
     const handleMakeAdmin = (id) => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
+        fetch(`https://outdoor-furniture-server.vercel.app/users/admin/${id}`, {
           method: "PUT",
           headers: {
             authorization: `bearer ${localStorage.getItem("accessToken")}`,

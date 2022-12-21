@@ -1,0 +1,51 @@
+Outdoor-furniture
+
+Client Side Link:- https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-Programmerbikash
+Server Side Link:- https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-Programmerbikash
+Live Link:- https://medical-care-for-all.web.app/
+Vercel Link:- https://outdoor-furniture-server.vercel.app/
+
+Admin Email: bikash@dey.com
+Admin Password: 1234#B
+
+Seller Email: tacen57620@sunetoa.com
+Seller Password: 1234#B
+
+User Email: weliy12887@turuma.com
+User Password: 1234#B
+
+
+Chair
+
+Bed
+Bunk bed
+Canopy bed => https://i.ibb.co/BKGdTKt/image.png
+Four-poster bed => https://i.ibb.co/m6gP2PF/image.png
+Murphy bed => https://i.ibb.co/jzYxG1g/image.png
+Platform bed => https://i.ibb.co/ZLJPSvt/image.png
+
+Desk => https://i.ibb.co/SRh1q3d/image.png
+Davenport desk => https://i.ibb.co/6yZryYz/image.png
+Computer desk => https://i.ibb.co/4PT1Qw7/image.png
+Writing desk => https://i.ibb.co/y0qBK9C/image.png
+Secretary desk => https://i.ibb.co/2tN5529/image.png
+
+Table => https://i.ibb.co/3vFQWxs/image.png
+Game Table => https://i.ibb.co/H7PKJZ4/image.png
+Coffee table => https://i.ibb.co/9bZjTSD/image.png
+Dining table => https://i.ibb.co/b5hwVsH/image.png
+Gateleg table => https://i.ibb.co/54Hd5xL/image.png
+
+
+Book now
+private route.
+
+bikashdey1220
+
+npm install react-hook-form
+tanstack/ react query
+npm install react-icons --save
+
+
+Bit Software Solution
+react-select/async

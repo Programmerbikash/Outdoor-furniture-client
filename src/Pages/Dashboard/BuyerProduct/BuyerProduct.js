@@ -8,7 +8,7 @@ const BuyerProduct = () => {
     const { isLoading, error, data: buyingdata = [] } = useQuery({
         queryKey: ["buyingdata", user?.email],
         queryFn: () =>
-            fetch(`http://localhost:5000/buying?email=${user?.email}`, {
+            fetch(`https://outdoor-furniture-server.vercel.app/buying?email=${user?.email}`, {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
                 }
@@ -24,7 +24,7 @@ const BuyerProduct = () => {
       if (error) return "An error has occurred: " + error.message;
     
     //   useEffect(() => {
-    //     fetch(`http://localhost:5000/buying`)
+    //     fetch(`https://outdoor-furniture-server.vercel.app/buying`)
     //       .then((res) => res.json())
     //       .then((data) => console.log(data));
     //   }, []);
@@ -46,6 +46,7 @@ const BuyerProduct = () => {
               </thead>
               <tbody>
                 {
+                  buyingdata &&
                     buyingdata.map((product, i) => <tr key={i}>
                     <th>
                       <label>{i+1}</label>

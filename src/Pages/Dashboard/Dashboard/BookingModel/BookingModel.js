@@ -29,7 +29,7 @@ const BookingModel = ({ service, setService }) => {
           phone
       };
 
-      fetch('http://localhost:5000/buying', {
+      fetch('https://outdoor-furniture-server.vercel.app/buying', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
